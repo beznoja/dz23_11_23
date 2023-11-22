@@ -1,6 +1,6 @@
 ﻿/*
-Напишите программу вычисления функции Аккермана с помощью рекурсии.
-Даны два неотрицательных числа m и n.
+Задайте значения M и N. Напишите программу, которая найдёт 
+сумму натуральных элементов в промежутке от M до N.
 */
 Console.Clear();
 
@@ -10,19 +10,12 @@ System.Console.WriteLine("Введите второе число: ");
 int number2 = Convert.ToInt32(Console.ReadLine());
 int intN(int m, int n)
 {
-     if (m == 0)
-    {
-        return n + 1;
+    if (m<=n)
+    {        
+      return n+intN (m,n-1);
     }
-    else if (n == 0)
-    {
-        return intN(m - 1, 1);
-    }
-    else
-    {
-        return intN(m - 1, intN(m, n - 1));
-    }
-
+    else 
+        return 0;
 }
 
 int result = intN(number, number2);
